@@ -7,11 +7,17 @@
 */
 
 const
-    N_CACHE_ENTRIES: 2
     N_CACHES: 2
+    N_CACHE_ENTRIES: 2
+
+    -- Have verified:
+    -- N_CACHE,N_CACHES_ENTRIES
+    -- 3,4
+    -- 16,1
 
 type 
-    cache_id: 0 .. N_CACHES - 1
+    -- cache_id: 0 .. N_CACHES - 1
+    cache_id: ScalarSet(N_CACHES)
     entries: 0 .. N_CACHE_ENTRIES - 1
 
     command: enum {READ, WRITE, INV} -- READ, WRITE come from CPU, INV comes from coherenter
